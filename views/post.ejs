@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('partials/_header') %>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('partials/_navigation') %>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1> <%= post.title %> </h1>
+            <span class="meta"> <%= post.dateCreated %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mx-auto">
+          <h2 class="section-heading"><%= post.title %></h2>
+
+          <p><%= post.detail %></p>
+
+        </div>
+      </div>
+      <div class="clearfix">
+
+        <a class="btn btn-danger float-right" href="/posts/<%= post._id %>?_method=DELETE"
+          onclick="return confirm('ARE YOU SURE?')">Delete Post</a>
+        <a class="btn btn-warning float-right text-white mr-3" href="/posts/edit/<%= post._id %>">Update Post</a>
+        
+      </div>
+    </div>
+
+  </article>
+
+  <hr>
+
+  <%- include('partials/_footer') %>
+
+</body>
+
+</html>

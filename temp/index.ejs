@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/_header') %>
+
+<body>
+
+  <%- include('partials/_navigation') %>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <% for (let i =0; i < posts.length; i++) { %>
+        <div class="post-preview">
+          <a href="/posts/<%= posts[i]._id %>">
+            <h2 class="post-title">
+              <%= posts[i].title %>
+            </h2>
+            <h3 class="post-subtitle">
+              <%= posts[i].detail %>
+            </h3>
+          </a>
+          <p class="post-meta">Posted on <%= posts[i].dateCreated %></p>
+        </div>
+        <hr>
+        <% } %>
+
+
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <%- include('partials/_footer') %>  
+
+</body>
+
+</html>
