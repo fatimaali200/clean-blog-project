@@ -12,7 +12,7 @@ exports.getPOST = async (req, res) => {
 };
 
 exports.createPOST = async (req, res) => {// async - await yapısı kullanacğız.
-  await Post.create(req.body); // body bilgisini Photo modeli sayesinde veritabanında dökümana dönüştürüyoruz.
+  await Post.create(req.body); // body bilgisini Post modeli sayesinde veritabanında dökümana dönüştürüyoruz.
   res.redirect('/');
 };
 
